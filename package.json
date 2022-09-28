@@ -11,7 +11,7 @@
     "webpack",
     "vue"
   ],
-  "bugs": "https://github.com/hfotechnology/vue-svg-loader-2/issues",
+  "bugs": "https://github.com/gammacommunications/vue-svg-loader-2/issues",
   "repository": "hfotechnology/vue-svg-loader-2",
   "license": "MIT",
   "author": "Gamma Communications GmbH <webdevelopment@gammacommunications.de>",
