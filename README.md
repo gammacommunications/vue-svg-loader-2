@@ -23,7 +23,7 @@ module.exports = {
         test: /\.svg$/,
         use: [
           'vue-loader',
-          'vue-svg-loader',
+          'vue-svg-loader-2',
         ],
       },
     ],
@@ -65,7 +65,7 @@ module.exports = {
         test: /\.svg$/,
         use: [
           'vue-loader',
-          'vue-svg-loader',
+          'vue-svg-loader-2',
         ],
       });
     },
