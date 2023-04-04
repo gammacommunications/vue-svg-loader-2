@@ -1,15 +1,3 @@
-const defaultConfig = {
-  name: 'preset-default',
-  params: {
-    overrides: {
-      inlineStyles: {
-        //force deletion of <style> tags in order for vue-loader to accept the template (no nested tags with side effects allowed)
-        onlyMatchedOnce: false
-      }
-    }
-  }
-}
-
 module.exports = function sanitizeSvgoConfig(svgoConfig) {
   const newConfig = JSON.parse(JSON.stringify(svgoConfig || {}));
   let plugins = newConfig.plugins = newConfig.plugins || [];
