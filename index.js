@@ -1,28 +1,12 @@
 const { optimize } = require('svgo');
 const { version } = require('vue');
 const semverMajor = require('semver/functions/major')
-
-const defaultConfig = {
-  plugins: [
-    {
-      name: 'preset-default',
-      params: {
-        overrides: {
-          inlineStyles: {
-            //force deletion of <style> tags in order for vue-loader to accept the template (no nested tags with side effects allowed)
-            onlyMatchedOnce: false
-          }
-        }
-      }
-    }
-  ]
-}
+const sanitizeSvgoConfig = require('./svgoConfigBuilder')
 
 module.exports = function vueSvgLoader(svg) {
   let { svgo: svgoConfig } = this.getOptions() || {};
 
-  // merge svgoConfig with defaultConfig in order to force inlining <style> tags
-  svgoConfig = {...svgoConfig, ...defaultConfig};
+  svgoConfig = sanitizeSvgoConfig(svgoConfig);
 
   let optimized;
   optimized = optimize(svg, {
