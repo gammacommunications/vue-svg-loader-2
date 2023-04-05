@@ -1,4 +1,3 @@
-<p align="center"><img src="docs/.vuepress/public/logo.svg?sanitize=true" width="40%"></p>
 <h1 align="center">vue-svg-loader-2</h1>
 <p align="center">A maintained version of the popular vue-svg-loader webpack loader that lets you use SVG files as Vue components</p>
 <p align="center">
