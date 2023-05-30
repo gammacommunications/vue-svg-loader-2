@@ -2960,8 +2960,8 @@ v8-to-istanbul@^9.0.1:
     convert-source-map "^1.6.0"
 
 vue-loader@^17.0.1:
-  version "17.1.1"
-  resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-17.1.1.tgz#546c85eb844f98653921c02e8b0b060ebea19bfb"
+  version "17.1.2"
+  resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-17.1.2.tgz#dc7af8573913308d374104d6c2a4796135782f93"
   dependencies:
     chalk "^4.1.0"
     hash-sum "^2.0.0"
