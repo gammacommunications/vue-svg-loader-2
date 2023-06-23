@@ -7,9 +7,9 @@
 
 ## Installation
 ``` bash
-npm i -D vue-svg-loader-2@beta
+npm i -D vue-svg-loader-2
 
-yarn add --dev vue-svg-loader-2@beta
+yarn add --dev vue-svg-loader-2
 ```
 
 ## Basic configuration
