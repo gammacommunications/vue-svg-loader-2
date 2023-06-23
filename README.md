@@ -1,6 +1,5 @@
-<p align="center"><img src="docs/.vuepress/public/logo.svg?sanitize=true" width="40%"></p>
-<h1 align="center">vue-svg-loader</h1>
-<p align="center">webpack loader that lets you use SVG files as Vue components</p>
+<h1 align="center">vue-svg-loader-2</h1>
+<p align="center">A maintained version of the popular vue-svg-loader webpack loader that lets you use SVG files as Vue components</p>
 <p align="center">
   <a href="https://vue-svg-loader.js.org">Documentation</a> -
   <a href="https://vue-svg-loader.js.org/faq.html">FAQ</a>
@@ -8,9 +7,9 @@
 
 ## Installation
 ``` bash
-npm i -D vue-svg-loader vue-template-compiler
+npm i -D vue-svg-loader-2@beta
 
-yarn add --dev vue-svg-loader vue-template-compiler
+yarn add --dev vue-svg-loader-2@beta
 ```
 
 ## Basic configuration
@@ -22,8 +21,8 @@ module.exports = {
       {
         test: /\.svg$/,
         use: [
-          'babel-loader',
-          'vue-svg-loader',
+          'vue-loader',
+          'vue-svg-loader-2',
         ],
       },
     ],
@@ -37,13 +36,17 @@ module.exports = {
     const svgRule = config.module.rule('svg');
 
     svgRule.uses.clear();
+    
+    // prevent injection of webpack-5 asset loaders
+    svgRule.delete('type');
+    svgRule.delete('generator');
 
     svgRule
-      .use('babel-loader')
-      .loader('babel-loader')
+      .use('vue-loader')
+      .loader('vue-loader') // or `vue-loader-v16` if you are using a preview support of Vue 3 in Vue CLI
       .end()
-      .use('vue-svg-loader')
-      .loader('vue-svg-loader');
+      .use('vue-svg-loader-2')
+      .loader('vue-svg-loader-2');
   },
 };
 ```
@@ -60,8 +63,8 @@ module.exports = {
       config.module.rules.push({
         test: /\.svg$/,
         use: [
-          'babel-loader',
-          'vue-svg-loader',
+          'vue-loader',
+          'vue-svg-loader-2',
         ],
       });
     },
@@ -104,4 +107,4 @@ export default {
 ```
 
 ## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvisualfanatic%2Fvue-svg-loader.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvisualfanatic%2Fvue-svg-loader?ref=badge_large)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fgammacommunications%2Fvue-svg-loader-2.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fgammacommunications%2Fvue-svg-loader-2?ref=badge_large)
